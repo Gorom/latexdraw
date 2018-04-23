@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.models.impl.TestIGroup
+-------------------------------------------------------------------------------
+Tests run: 97, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.46 sec - in net.sf.latexdraw.models.impl.TestIGroup

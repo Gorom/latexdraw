@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestStatusBarController
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.029 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestStatusBarController
+testClickHyperlink(net.sf.latexdraw.instruments.TestStatusBarController)  Time elapsed: 0.805 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+Wanted but not invoked:
+hostServices.showDocument("foo");
+-> at javafx.application.HostServices.showDocument(HostServices.java:127)
+Actually, there were zero interactions with this mock.
+
+	at javafx.application.HostServices.showDocument(HostServices.java:127)
+	at net.sf.latexdraw.instruments.TestStatusBarController.testClickHyperlink(TestStatusBarController.java:38)
+

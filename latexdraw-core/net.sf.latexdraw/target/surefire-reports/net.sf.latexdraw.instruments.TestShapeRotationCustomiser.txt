@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestShapeRotationCustomiser
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 3.384 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestShapeRotationCustomiser
+testRotate180(net.sf.latexdraw.instruments.TestShapeRotationCustomiser)  Time elapsed: 0.742 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<3.141592653589793> but was:<0.0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestShapeRotationCustomiser.testRotate180(TestShapeRotationCustomiser.java:76)
+
+testRotate270(net.sf.latexdraw.instruments.TestShapeRotationCustomiser)  Time elapsed: 0.536 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<-1.5707963267948966> but was:<0.0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestShapeRotationCustomiser.testRotate270(TestShapeRotationCustomiser.java:84)
+
+testIncrRotation(net.sf.latexdraw.instruments.TestShapeRotationCustomiser)  Time elapsed: 0.582 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1.0> but was:<0.0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestShapeRotationCustomiser.testIncrRotation(TestShapeRotationCustomiser.java:92)
+
+testRotate90(net.sf.latexdraw.instruments.TestShapeRotationCustomiser)  Time elapsed: 0.66 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1.5707963267948966> but was:<0.0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestShapeRotationCustomiser.testRotate90(TestShapeRotationCustomiser.java:68)
+

@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestExceptionManager
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.231 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestExceptionManager
+testClickShowErrorStage(net.sf.latexdraw.instruments.TestExceptionManager)  Time elapsed: 0.702 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+Wanted but not invoked:
+stage.show();
+-> at javafx.stage.Stage.show(Stage.java:259)
+Actually, there were zero interactions with this mock.
+
+	at javafx.stage.Stage.show(Stage.java:259)
+	at net.sf.latexdraw.instruments.TestExceptionManager.testClickShowErrorStage(TestExceptionManager.java:95)
+

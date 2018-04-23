@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestCodeInserter
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 5.819 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestCodeInserter
+testCancelDeactivateHide(net.sf.latexdraw.instruments.TestCodeInserter)  Time elapsed: 1.534 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertFalse(Assert.java:64)
+	at org.junit.Assert.assertFalse(Assert.java:74)
+	at net.sf.latexdraw.instruments.TestCodeInserter.testCancelDeactivateHide(TestCodeInserter.java:73)
+
+testEnterCodeKOCreatesText(net.sf.latexdraw.instruments.TestCodeInserter)  Time elapsed: 0.948 sec  <<< ERROR!
+java.util.NoSuchElementException: null
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.testfx.service.finder.impl.WindowFinderImpl.window(WindowFinderImpl.java:70)
+	at org.testfx.robot.impl.WriteRobotImpl.fetchTargetWindow(WriteRobotImpl.java:67)
+	at org.testfx.robot.impl.WriteRobotImpl.write(WriteRobotImpl.java:59)
+	at org.testfx.api.FxRobot.write(FxRobot.java:501)
+	at org.testfx.api.FxRobot.write(FxRobot.java:60)
+	at net.sf.latexdraw.instruments.TestCodeInserter.testEnterCodeKOCreatesText(TestCodeInserter.java:108)
+
+testEnterCodeOKCreatesGoodShape(net.sf.latexdraw.instruments.TestCodeInserter)  Time elapsed: 0.871 sec  <<< ERROR!
+java.util.NoSuchElementException: null
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.testfx.service.finder.impl.WindowFinderImpl.window(WindowFinderImpl.java:70)
+	at org.testfx.robot.impl.WriteRobotImpl.fetchTargetWindow(WriteRobotImpl.java:67)
+	at org.testfx.robot.impl.WriteRobotImpl.write(WriteRobotImpl.java:59)
+	at org.testfx.api.FxRobot.write(FxRobot.java:501)
+	at org.testfx.api.FxRobot.write(FxRobot.java:60)
+	at net.sf.latexdraw.instruments.TestCodeInserter.testEnterCodeOKCreatesGoodShape(TestCodeInserter.java:100)
+
+testTypeBadCodeOK(net.sf.latexdraw.instruments.TestCodeInserter)  Time elapsed: 0.885 sec  <<< ERROR!
+java.util.NoSuchElementException: null
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.testfx.service.finder.impl.WindowFinderImpl.window(WindowFinderImpl.java:70)
+	at org.testfx.robot.impl.WriteRobotImpl.fetchTargetWindow(WriteRobotImpl.java:67)
+	at org.testfx.robot.impl.WriteRobotImpl.write(WriteRobotImpl.java:59)
+	at org.testfx.api.FxRobot.write(FxRobot.java:501)
+	at org.testfx.api.FxRobot.write(FxRobot.java:60)
+	at net.sf.latexdraw.instruments.TestCodeInserter.testTypeBadCodeOK(TestCodeInserter.java:86)
+

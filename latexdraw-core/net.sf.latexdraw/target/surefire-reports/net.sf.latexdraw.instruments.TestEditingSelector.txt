@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestEditingSelector
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 8.573 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestEditingSelector
+testClickHandActivationNoSelection(net.sf.latexdraw.instruments.TestEditingSelector)  Time elapsed: 0.537 sec  <<< FAILURE!
+org.mockito.exceptions.verification.junit.ArgumentsAreDifferent: 
+Argument(s) are different! Wanted:
+pencil.setActivated(false, false);
+-> at org.malai.javafx.instrument.JfxInstrument.setActivated(JfxInstrument.java:63)
+Actual invocation has different arguments:
+pencil.setActivated(false);
+-> at net.sf.latexdraw.instruments.EditingSelector.initialize(EditingSelector.java:149)
+
+	at org.malai.javafx.instrument.JfxInstrument.setActivated(JfxInstrument.java:63)
+	at net.sf.latexdraw.instruments.TestEditingSelector.testClickHandActivationNoSelection(TestEditingSelector.java:159)
+
+testClickTextCreatesText(net.sf.latexdraw.instruments.TestEditingSelector)  Time elapsed: 0.746 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestEditingSelector.testClickTextCreatesText(TestEditingSelector.java:150)
+
+testClickHandActivationSelection(net.sf.latexdraw.instruments.TestEditingSelector)  Time elapsed: 0.519 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+Wanted but not invoked:
+shapeDeleter.setActivated(true);
+-> at net.sf.latexdraw.instruments.ShapeDeleter.setActivated(ShapeDeleter.java:58)
+Actually, there were zero interactions with this mock.
+
+	at net.sf.latexdraw.instruments.ShapeDeleter.setActivated(ShapeDeleter.java:58)
+	at net.sf.latexdraw.instruments.TestEditingSelector.testClickHandActivationSelection(TestEditingSelector.java:169)
+
+testClickShapeMode(net.sf.latexdraw.instruments.TestEditingSelector)  Time elapsed: 0.798 sec  <<< FAILURE!
+org.junit.experimental.theories.internal.ParameterizedAssertionError: testClickShapeMode("RECT" <from RECT>)
+	at net.sf.latexdraw.instruments.Pencil.setCurrentChoice(Pencil.java:414)
+	at net.sf.latexdraw.instruments.TestEditingSelector.testClickShapeMode(TestEditingSelector.java:108)
+

@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestZoomer
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 2, Time elapsed: 1.507 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestZoomer
+testIncrZoom(net.sf.latexdraw.instruments.TestZoomer)  Time elapsed: 0.563 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1.05> but was:<1.0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestZoomer.testIncrZoom(TestZoomer.java:76)
+
+testDecrZoomKey(net.sf.latexdraw.instruments.TestZoomer)  Time elapsed: 0.627 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0.95> but was:<1.05>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:553)
+	at org.junit.Assert.assertEquals(Assert.java:683)
+	at net.sf.latexdraw.instruments.TestZoomer.testDecrZoomKey(TestZoomer.java:93)
+

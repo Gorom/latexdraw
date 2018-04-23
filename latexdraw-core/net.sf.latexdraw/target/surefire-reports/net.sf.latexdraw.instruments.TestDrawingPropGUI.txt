@@ -1,0 +1,65 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestDrawingPropGUI
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 12.229 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestDrawingPropGUI
+testSetCaption(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 2.822 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[new Title]> but was:<[]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSetCaption(TestDrawingPropGUI.java:74)
+
+testSePositionHEREHERE(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 0.723 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<H> but was:<>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSePositionHEREHERE(TestDrawingPropGUI.java:115)
+
+testSePositionBOTTOM(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 0.812 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<b> but was:<>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSePositionBOTTOM(TestDrawingPropGUI.java:97)
+
+testSePositionFLOAT(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 0.735 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<p> but was:<>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSePositionFLOAT(TestDrawingPropGUI.java:103)
+
+testSePositionTOP(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 0.865 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<t> but was:<>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSePositionTOP(TestDrawingPropGUI.java:121)
+
+testSePositionHERE(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 0.73 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<h> but was:<>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSePositionHERE(TestDrawingPropGUI.java:109)
+
+testSetLabel(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 2.741 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[newLabel]> but was:<[]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSetLabel(TestDrawingPropGUI.java:80)
+
+testSetScale(net.sf.latexdraw.instruments.TestDrawingPropGUI)  Time elapsed: 1.328 sec  <<< FAILURE!
+java.lang.AssertionError: Values should be different. Actual: 1.0
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failEquals(Assert.java:185)
+	at org.junit.Assert.assertNotEquals(Assert.java:232)
+	at org.junit.Assert.assertNotEquals(Assert.java:249)
+	at net.sf.latexdraw.instruments.robot.FxRobotSpinner.doTestSpinner(FxRobotSpinner.java:39)
+	at net.sf.latexdraw.instruments.TestDrawingPropGUI.testSetScale(TestDrawingPropGUI.java:85)
+

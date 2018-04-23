@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.models.impl.TestIPicture
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.422 sec - in net.sf.latexdraw.models.impl.TestIPicture

@@ -1,0 +1,116 @@
+-------------------------------------------------------------------------------
+Test set: net.sf.latexdraw.instruments.TestCanvasCreation
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 14, Errors: 0, Skipped: 0, Time elapsed: 29.577 sec <<< FAILURE! - in net.sf.latexdraw.instruments.TestCanvasCreation
+testDrawPicture(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.949 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawPicture(TestCanvasCreation.java:297)
+
+testDrawPolylines(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.131 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawPolylines(TestCanvasCreation.java:196)
+
+testDrawPolygon(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.174 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawPolygon(TestCanvasCreation.java:181)
+
+testDrawCircleArc(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.926 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawCircleArc(TestCanvasCreation.java:148)
+
+testDrawFreeHand(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.992 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawFreeHand(TestCanvasCreation.java:165)
+
+testDrawCircle(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.016 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawCircle(TestCanvasCreation.java:133)
+
+testDrawRectangle(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.019 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawRectangle(TestCanvasCreation.java:85)
+
+testDrawSquare(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.988 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawSquare(TestCanvasCreation.java:117)
+
+testDrawAxes(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.706 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawAxes(TestCanvasCreation.java:255)
+
+testDrawGrid(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.528 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawGrid(TestCanvasCreation.java:241)
+
+testDrawText(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.537 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawText(TestCanvasCreation.java:273)
+
+testDrawEllipse(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.101 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawEllipse(TestCanvasCreation.java:101)
+
+testDrawBezierCurve(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 2.143 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawBezierCurve(TestCanvasCreation.java:211)
+
+testDrawDot(net.sf.latexdraw.instruments.TestCanvasCreation)  Time elapsed: 1.702 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at net.sf.latexdraw.instruments.TestCanvasCreation.testDrawDot(TestCanvasCreation.java:227)
+
