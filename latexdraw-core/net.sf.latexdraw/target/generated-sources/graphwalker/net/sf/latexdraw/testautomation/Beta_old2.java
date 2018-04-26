@@ -5,8 +5,8 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 import org.graphwalker.java.annotation.Edge;
 
-@Model(file = "net/sf/latexdraw/testautomation/Beta.graphml")
-public interface Beta {
+@Model(file = "net/sf/latexdraw/testautomation/Beta_old2.graphml")
+public interface Beta_old2 {
 
     @Vertex()
     void Drawing();
@@ -18,25 +18,13 @@ public interface Beta {
     void e_DeleteSelectedShapes();
 
     @Edge()
-    void e_Scale();
-
-    @Edge()
     void e_ViewDrawing();
-
-    @Edge()
-    void e_CloseAppDoNotSave();
-
-    @Edge()
-    void e_ViewPST();
 
     @Edge()
     void e_Save();
 
     @Vertex()
     void ExitPrompt();
-
-    @Vertex()
-    void PST();
 
     @Edge()
     void e_SelectAdditionalShape();
@@ -45,16 +33,10 @@ public interface Beta {
     void e_Rotate();
 
     @Edge()
-    void e_Move();
+    void e_Failure();
 
     @Vertex()
     void ShapesSelected();
-
-    @Edge()
-    void e_DrawCircle();
-
-    @Edge()
-    void e_SetCurrentTool();
 
     @Edge()
     void e_CloseApp();
@@ -63,23 +45,41 @@ public interface Beta {
     void SplashScreen();
 
     @Edge()
-    void e_CancelPrompt();
-
-    @Edge()
-    void e_SelectShape();
-
-    @Edge()
     void e_ProgramStart();
 
     @Vertex()
     void Exit();
 
     @Edge()
-    void e_Success();
+    void e_Scale();
 
     @Edge()
-    void e_Failure();
+    void e_CloseAppDoNotSave();
 
     @Edge()
     void e_Restart();
+
+    @Edge()
+    void e_ViewPST();
+
+    @Vertex()
+    void PST();
+
+    @Edge()
+    void e_Move();
+
+    @Edge()
+    void e_Success();
+
+    @Edge()
+    void e_DrawCircle();
+
+    @Edge()
+    void e_SetCurrentTool();
+
+    @Edge()
+    void e_CancelPrompt();
+
+    @Edge()
+    void e_SelectShape();
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="0.106" tests="1" failures="0" errors="0">
-    <testsuite tests="1" failures="0" errors="0" time="0.106" timestamp="2018-04-23T13:47:56">
+<testsuites time="0.662" tests="1" failures="0" errors="0">
+    <testsuite tests="1" failures="0" errors="0" time="0.662" timestamp="2018-04-23T15:26:10">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
@@ -140,6 +140,6 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="0.106" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
+        <testcase name="AlfaModel" time="0.662" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
     </testsuite>
 </testsuites>

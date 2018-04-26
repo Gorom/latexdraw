@@ -125,6 +125,7 @@ net/sf/latexdraw/parsers/svg/SVGGElement.class
 net/sf/latexdraw/parsers/pst/PSTParser$ParamdotsizeContext.class
 net/sf/latexdraw/parsers/pst/PSTParser$PsshadowboxContext.class
 net/sf/latexdraw/parsers/svg/SVGPathElement.class
+net/sf/latexdraw/testautomation/Beta_old2.class
 net/sf/latexdraw/parsers/pst/PSTParser$ParamframearcContext.class
 net/sf/latexdraw/commands/UpdateTemplates.class
 net/sf/latexdraw/commands/ShapeCmdImpl.class
@@ -421,7 +422,6 @@ net/sf/latexdraw/parsers/pst/PSTParser$PstcustomBlockContext.class
 net/sf/latexdraw/models/interfaces/shape/LineStyle.class
 net/sf/latexdraw/models/ShapeFactory.class
 net/sf/latexdraw/commands/shape/ShapeProperties$47.class
-net/sf/latexdraw/testautomation/Alfa.class
 net/sf/latexdraw/models/interfaces/shape/ArrowStyle$5.class
 net/sf/latexdraw/models/interfaces/shape/Position$2.class
 net/sf/latexdraw/models/impl/LRhombus.class

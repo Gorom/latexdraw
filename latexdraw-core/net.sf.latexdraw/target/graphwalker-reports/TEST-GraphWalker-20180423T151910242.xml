@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="0.18" tests="1" failures="0" errors="0">
-    <testsuite tests="1" failures="0" errors="0" time="0.18" timestamp="2018-04-23T13:52:04">
+<testsuites time="0.229" tests="1" failures="0" errors="1">
+    <testsuite tests="1" failures="0" errors="1" time="0.229" timestamp="2018-04-23T15:19:10">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
@@ -140,6 +140,45 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="0.18" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
+        <testcase name="AlfaModel" time="0.229" classname="net.sf.latexdraw.testautomation.AlfaModel">
+            <error type="org.graphwalker.core.generator.NoPathFoundException" message="Could not find a valid path from element: null">
+                org.graphwalker.core.generator.NoPathFoundException: Could not find a valid path from element: null
+                	at org.graphwalker.core.generator.RandomPath.getNextStep(RandomPath.java:70)
+                	at org.graphwalker.core.machine.SimpleMachine.getNextStep(SimpleMachine.java:130)
+                	at org.graphwalker.core.machine.SimpleMachine.takeNextStep(SimpleMachine.java:189)
+                	at org.graphwalker.core.machine.SimpleMachine.walk(SimpleMachine.java:140)
+                	at org.graphwalker.core.machine.SimpleMachine.getNextStep(SimpleMachine.java:102)
+                	at org.graphwalker.java.test.TestExecutor.execute(TestExecutor.java:199)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                	at java.lang.reflect.Method.invoke(Method.java:498)
+                	at org.graphwalker.java.test.Reflections.invoke(Reflections.java:74)
+                	at org.graphwalker.java.test.Reflector.execute(Reflector.java:125)
+                	at org.graphwalker.maven.plugin.TestMojo.execute(TestMojo.java:153)
+                	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+                	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+                	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+                	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+                	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+                	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+                	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+                	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+                	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+                	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+                	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                	at java.lang.reflect.Method.invoke(Method.java:498)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</error>
+        </testcase>
     </testsuite>
 </testsuites>

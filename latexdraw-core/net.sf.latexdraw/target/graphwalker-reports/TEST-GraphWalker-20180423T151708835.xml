@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="0.216" tests="1" failures="0" errors="0">
-    <testsuite tests="1" failures="0" errors="0" time="0.216" timestamp="2018-04-20T16:18:21">
+<testsuites time="1.4" tests="1" failures="0" errors="0">
+    <testsuite tests="1" failures="0" errors="0" time="1.4" timestamp="2018-04-23T15:17:08">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
             <property name="env.CLUTTER_IM_MODULE" value="xim"/>
             <property name="env.COMPIZ_CONFIG_PROFILE" value="ubuntu"/>
-            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-MWknO713YP"/>
+            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-exfHjwmvnE"/>
             <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/ubuntu.default.path"/>
             <property name="env.DESKTOP_SESSION" value="ubuntu"/>
             <property name="env.DISPLAY" value=":0"/>
@@ -64,10 +64,10 @@
             <property name="env.UPSTART_EVENTS" value="started starting"/>
             <property name="env.UPSTART_INSTANCE" value=""/>
             <property name="env.UPSTART_JOB" value="unity-settings-daemon"/>
-            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1930"/>
+            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1758"/>
             <property name="env.USER" value="leigh"/>
             <property name="env.VTE_VERSION" value="4205"/>
-            <property name="env.WINDOWID" value="37753120"/>
+            <property name="env.WINDOWID" value="56623114"/>
             <property name="env.XAUTHORITY" value="/home/leigh/.Xauthority"/>
             <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg"/>
             <property name="env.XDG_CURRENT_DESKTOP" value="Unity"/>
@@ -140,6 +140,6 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="0.216" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
+        <testcase name="AlfaModel" time="1.4" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
     </testsuite>
 </testsuites>
