@@ -54,9 +54,6 @@ public interface Beta {
     void e_DrawCircle();
 
     @Edge()
-    void e_SetCurrentTool();
-
-    @Edge()
     void e_CloseApp();
 
     @Vertex()
