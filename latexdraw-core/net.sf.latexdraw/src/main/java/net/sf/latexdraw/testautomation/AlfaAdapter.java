@@ -1,27 +1,14 @@
 package net.sf.latexdraw.testautomation;
 
 import net.sf.latexdraw.LaTeXDraw;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Key;
-import org.sikuli.script.Match;
-import org.sikuli.script.Screen;
+import org.sikuli.script.*;
 
 import java.io.File;
-import java.nio.file.Files;
 
 public class AlfaAdapter {
 
 	private final String sikuliImageDirr = System.getProperty("user.dir") + "/src/main/resources/res/sikuli/";
 	private Screen screen;
-
-	public AlfaAdapter() {
-		/*try{
-			screen.click(System.getProperty("user.dir") + "/src/main/resources/res/sikuli/ubuntulogo.png");
-			screen.type("HELLO");
-		}catch (FindFailed e){
-			e.printStackTrace();
-		}*/
-	}
 
 	public void init() {
 		Thread appThread = new Thread() {
@@ -56,27 +43,11 @@ public class AlfaAdapter {
 	}
 
 	public void drawSelectedShape() {
-		Match target = null;
-		try {
-			target = screen.find(sikuliImageDirr + "LaTeXDraw_UpperLeftDrawingArea.png");
-		} catch (FindFailed findFailed) {
-			System.out.println("Find upper left corner failed.");
-		}
-
-		if (target != null) {
-			try {
-				screen.dragDrop(target, target.offset(50, 50));
-			} catch (FindFailed findFailed) {
-				System.out.println("Dragging and dropping failed.");
-			}
-		} else {
-			System.out.println("drawSelectedShape: target is null.");
-		}
+		clickImageAndDrag("LaTeXDraw_UpperLeftDrawingArea.png", 0, 0, 50, 50);
 	}
 
 	public boolean foundSplash() {
 		return checkMatch("LatexDraw_Splash.png", 20);
-
 	}
 
 	public boolean foundToolbar() {
@@ -102,96 +73,87 @@ public class AlfaAdapter {
 		}
 	}
 
-	public void selectCircle() {
-		Match target = null;
-		try {
-			target = screen.find(sikuliImageDirr + "LaTeXDraw_Circle.png");
-		} catch (FindFailed findFailed) {
-			System.out.println("Find circle failed.");
-		}
-
-		if (target != null) {
-			try {
-				screen.dragDrop(target, target.offset(200, 200));
-			} catch (FindFailed findFailed) {
-				System.out.println("Selecting circle failed.");
-			}
-		} else {
-			System.out.println("selectCircle: target is null.");
-		}
+	public boolean selectCircle() {
+		return clickImageAndDrag("LaTeXDraw_Circle.png", 0, 0, 50, 50);
 	}
 
 	public boolean circleSelected() {
 		return checkMatch("LaTeXDraw_SelectedCircle.png", 20);
 	}
 
-	public void save(){
+	public void save() {
 		screen.type("s", Key.CTRL);
-		if(checkMatch("LaTeXDraw_CancelSave.png", 5)){
+		if (checkMatch("LaTeXDraw_CancelSave.png", 5)) {
 			screen.type("test");
 			screen.type(Key.ENTER);
 		}
 	}
 
 	public void moveCircle() {
-		Match target = null;
-		try {
-			target = screen.find(sikuliImageDirr + "LaTeXDraw_SelectedCircle.png");
-		} catch (FindFailed findFailed) {
-			System.out.println("Find circle failed.");
-		}
-
-		if (target != null) {
-			try {
-				screen.dragDrop(target.offset(49, 25), target.offset(200, 200) );
-			} catch (FindFailed findFailed) {
-				System.out.println("Selecting circle failed.");
-			}
-		} else {
-			System.out.println("selectCircle: target is null.");
-		}
-
+		clickImageAndDrag("LaTeXDraw_SelectedCircle.png", 49, 25, 200, 200);
 	}
 
 	public void viewPST() {
-		Match target = null;
-		try {
-			target = screen.find(sikuliImageDirr + "LaTeXDraw_PSTTab.png");
-		} catch (FindFailed findFailed) {
-			System.out.println("Find pst failed.");
-		}
-
-		if (target != null) {
-			try {
-				screen.click(sikuliImageDirr +"LaTeXDraw_PSTTab.png" );
-			} catch (FindFailed findFailed) {
-				System.out.println("Selecting pst failed.");
-			}
-		} else {
-			System.out.println("viewpst: target is null.");
-		}
+		clickImage("LaTeXDraw_PSTTab.png", 0, 0);
 	}
 
 	public void viewDrawing() {
+		clickImage("LaTeXDraw_ViewDrawing.png", 0, 0);
+	}
+
+	public boolean clickImage(String imageName, int offsetX, int offsetY) {
+		boolean success = true;
 		Match target = null;
 		try {
-			target = screen.find(sikuliImageDirr + "LaTeXDraw_ViewDrawing.png");
+			target = screen.find(sikuliImageDirr + imageName);
 		} catch (FindFailed findFailed) {
-			System.out.println("Find pst failed.");
+			System.out.println("Find " + imageName + " failed.");
+			success = false;
 		}
-
 		if (target != null) {
 			try {
-				screen.click(sikuliImageDirr +"LaTeXDraw_ViewDrawing.png" );
+				screen.click(target.offset(offsetX, offsetY));
 			} catch (FindFailed findFailed) {
-				System.out.println("Selecting pst failed.");
+				System.out.println("Clicking " + imageName + " failed.");
+				success = false;
 			}
 		} else {
-			System.out.println("viewpst: target is null.");
+			System.out.println("clickImage: target is null.");
+			success = false;
 		}
+		return success;
+	}
+
+	public boolean clickImageAndDrag(String imageName, int startOffsetX, int startOffsetY, int endOffsetX, int endOffsetY) {
+		boolean success = true;
+		Match target = null;
+		try {
+			target = screen.find(sikuliImageDirr + imageName);
+		} catch (FindFailed findFailed) {
+			System.out.println("Find " + imageName + " failed.");
+			success = false;
+		}
+		if (target != null) {
+			try {
+				Region start = target.offset(startOffsetX, startOffsetY);
+				Region end = target.offset(endOffsetX, endOffsetY);
+				screen.dragDrop(start, end);
+			} catch (FindFailed findFailed) {
+				System.out.println("Clicking and dragging " + imageName + " failed.");
+				success = false;
+			}
+		} else {
+			System.out.println("clickImageAndDrag: target is null.");
+			success = false;
+		}
+		return success;
 	}
 
 	public void delete() {
 		screen.type(Key.DELETE);
+	}
+
+	public void deselect() {
+		clickImage("LatexDraw_DrawingEdge.png", 0, 0);
 	}
 }

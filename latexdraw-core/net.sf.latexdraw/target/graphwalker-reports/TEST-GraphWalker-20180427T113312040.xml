@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="0.0" tests="1" failures="0" errors="1">
-    <testsuite tests="1" failures="0" errors="1" time="0.0" timestamp="2018-04-23T15:51:13">
+<testsuites time="114.645" tests="1" failures="0" errors="1">
+    <testsuite tests="1" failures="0" errors="1" time="114.645" timestamp="2018-04-27T11:33:12">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
             <property name="env.CLUTTER_IM_MODULE" value="xim"/>
+            <property name="env.COMPIZ_BIN_PATH" value="/usr/bin/"/>
             <property name="env.COMPIZ_CONFIG_PROFILE" value="ubuntu"/>
-            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-exfHjwmvnE"/>
+            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-3r5kYhkPDb"/>
             <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/ubuntu.default.path"/>
             <property name="env.DESKTOP_SESSION" value="ubuntu"/>
             <property name="env.DISPLAY" value=":0"/>
@@ -21,9 +22,9 @@
             <property name="env.GTK_MODULES" value="gail:atk-bridge:unity-gtk-module"/>
             <property name="env.HOME" value="/home/leigh"/>
             <property name="env.IM_CONFIG_PHASE" value="1"/>
-            <property name="env.INSTANCE" value="Unity"/>
+            <property name="env.INSTANCE" value=""/>
             <property name="env.JAVA_HOME" value="/usr/lib/jvm/java-8-openjdk-amd64"/>
-            <property name="env.JOB" value="gnome-session"/>
+            <property name="env.JOB" value="unity-settings-daemon"/>
             <property name="env.LANG" value="en_US.UTF-8"/>
             <property name="env.LANGUAGE" value="en_US"/>
             <property name="env.LC_ADDRESS" value="sv_SE.UTF-8"/>
@@ -56,23 +57,28 @@
             <property name="env.QT_IM_MODULE" value="ibus"/>
             <property name="env.QT_LINUX_ACCESSIBILITY_ALWAYS_ON" value="1"/>
             <property name="env.QT_QPA_PLATFORMTHEME" value="appmenu-qt5"/>
+            <property name="env.SESSION" value="ubuntu"/>
             <property name="env.SESSIONTYPE" value="gnome-session"/>
+            <property name="env.SESSION_MANAGER" value="local/sleigher:@/tmp/.ICE-unix/2504,unix/sleigher:/tmp/.ICE-unix/2504"/>
             <property name="env.SHELL" value="/bin/zsh"/>
             <property name="env.SHLVL" value="1"/>
             <property name="env.SSH_AUTH_SOCK" value="/run/user/1000/keyring/ssh"/>
             <property name="env.TERM" value="xterm-256color"/>
-            <property name="env.UPSTART_EVENTS" value="started starting"/>
+            <property name="env.UNITY_DEFAULT_PROFILE" value="unity"/>
+            <property name="env.UNITY_HAS_3D_SUPPORT" value="true"/>
+            <property name="env.UPSTART_EVENTS" value="xsession started"/>
             <property name="env.UPSTART_INSTANCE" value=""/>
-            <property name="env.UPSTART_JOB" value="unity-settings-daemon"/>
-            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1758"/>
+            <property name="env.UPSTART_JOB" value="unity7"/>
+            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1797"/>
             <property name="env.USER" value="leigh"/>
             <property name="env.VTE_VERSION" value="4205"/>
-            <property name="env.WINDOWID" value="56623114"/>
+            <property name="env.WINDOWID" value="85983242"/>
             <property name="env.XAUTHORITY" value="/home/leigh/.Xauthority"/>
             <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg"/>
             <property name="env.XDG_CURRENT_DESKTOP" value="Unity"/>
             <property name="env.XDG_DATA_DIRS" value="/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop"/>
             <property name="env.XDG_GREETER_DATA_DIR" value="/var/lib/lightdm-data/leigh"/>
+            <property name="env.XDG_MENU_PREFIX" value="gnome-"/>
             <property name="env.XDG_RUNTIME_DIR" value="/run/user/1000"/>
             <property name="env.XDG_SEAT" value="seat0"/>
             <property name="env.XDG_SEAT_PATH" value="/org/freedesktop/DisplayManager/Seat0"/>
@@ -140,13 +146,15 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="0.0" classname="net.sf.latexdraw.testautomation.AlfaModel">
-            <error type="java.lang.NullPointerException">
-                java.lang.NullPointerException
-                	at net.sf.latexdraw.testautomation.AlfaAdapter.foundSplash(AlfaAdapter.java:36)
-                	at net.sf.latexdraw.testautomation.AlfaModel.e_ProgramStart(AlfaModel.java:135)
-                	at jdk.nashorn.internal.scripts.Script$Recompilation$12$685$\^eval\_.e_ProgramStart(&lt;eval&gt;:1)
-                	at jdk.nashorn.internal.scripts.Script$11$\^eval\_.:program(&lt;eval&gt;:1)
+        <testcase name="AlfaModel" time="114.645" classname="net.sf.latexdraw.testautomation.AlfaModel">
+            <error type="java.lang.AssertionError">
+                java.lang.AssertionError
+                	at org.junit.Assert.fail(Assert.java:86)
+                	at org.junit.Assert.assertTrue(Assert.java:41)
+                	at org.junit.Assert.assertTrue(Assert.java:52)
+                	at net.sf.latexdraw.testautomation.AlfaModel.e_SelectShape(AlfaModel.java:112)
+                	at jdk.nashorn.internal.scripts.Script$Recompilation$54$645$\^eval\_.e_SelectShape(&lt;eval&gt;:1)
+                	at jdk.nashorn.internal.scripts.Script$53$\^eval\_.:program(&lt;eval&gt;:1)
                 	at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:637)
                 	at jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:494)
                 	at jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:393)

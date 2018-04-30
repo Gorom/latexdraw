@@ -1,7 +1,6 @@
 package net.sf.latexdraw.testautomation;
 
 import org.graphwalker.core.condition.Length;
-import org.graphwalker.core.condition.TimeDuration;
 import org.graphwalker.core.generator.QuickRandomPath;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.AfterExecution;
@@ -10,15 +9,13 @@ import org.graphwalker.java.annotation.GraphWalker;
 import org.graphwalker.java.test.TestBuilder;
 import org.junit.Test;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertTrue;
 
 @GraphWalker(value = "random(edge_coverage(100))", start = "e_ProgramStart")
 public class AlfaModel extends ExecutionContext implements Beta {
 
 	private final AlfaAdapter adapter = new AlfaAdapter();
-	private final String MODEL_PATH = System.getProperty("user.dir") + "/src/main/resources/net/sf/latexdraw/testautomation/Alfa_mini.graphml";
+	private final String MODEL_PATH = System.getProperty("user.dir") + "/src/main/resources/net/sf/latexdraw/testautomation/Beta.graphml";
 
 	@BeforeExecution
 	public void setup() {
@@ -40,7 +37,7 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	@Override
 	public void e_DeselectShapes() {
 		System.out.println("e_DeselectShapes");
-
+		adapter.deselect();
 	}
 
 	@Override
@@ -75,12 +72,7 @@ public class AlfaModel extends ExecutionContext implements Beta {
 
 	@Override
 	public void e_DrawCircle() {
-		System.out.println("e_DrawCircle");
-		if (adapter.foundCircleTool()) {
-			System.out.println("Found circle tool!");
-		} else {
-			System.out.println("Could not find circle tool.");
-		}
+		assertTrue(adapter.foundCircleTool());
 		adapter.selectCircleTool();
 		adapter.drawSelectedShape();
 		assertTrue(adapter.foundCircle());
@@ -110,8 +102,9 @@ public class AlfaModel extends ExecutionContext implements Beta {
 			System.out.println("Could not find selection tool.");
 		}
 		adapter.selectSelectionTool();
-		adapter.selectCircle();
-		assertTrue(adapter.circleSelected());
+		if (adapter.selectCircle()) {
+			assertTrue(adapter.circleSelected());
+		}
 	}
 
 	@Override
@@ -186,7 +179,7 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	@Test
 	public void testTest() {
 		new TestBuilder()
-				.setModel(System.getProperty("user.dir") + "/src/main/resources/net/sf/latexdraw/testautomation/Beta.graphml")
+				.setModel(MODEL_PATH)
 				.setContext(new AlfaModel())
 				.setPathGenerator(new QuickRandomPath(new Length(20)))
 				.setStart("e_ProgramStart")

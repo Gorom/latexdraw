@@ -34,6 +34,7 @@ net/sf/latexdraw/view/jfx/ViewEllipse.class
 net/sf/latexdraw/instruments/ShapeGrouper.class
 net/sf/latexdraw/commands/shape/ShapeProperties$69.class
 net/sf/latexdraw/parsers/pst/PSTParser$ShowContext.class
+net/sf/latexdraw/testautomation/Circle.class
 net/sf/latexdraw/parsers/pst/PSTParser$DefinecolorContext.class
 net/sf/latexdraw/models/impl/LSquaredShape.class
 net/sf/latexdraw/parsers/pst/PSTParser$TranslateContext.class

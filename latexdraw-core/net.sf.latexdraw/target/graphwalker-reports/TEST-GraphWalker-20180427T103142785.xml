@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="33.628" tests="1" failures="0" errors="0">
-    <testsuite tests="1" failures="0" errors="0" time="33.628" timestamp="2018-04-23T15:54:42">
+<testsuites time="5.483" tests="1" failures="0" errors="1">
+    <testsuite tests="1" failures="0" errors="1" time="5.483" timestamp="2018-04-27T10:31:42">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
             <property name="env.CLUTTER_IM_MODULE" value="xim"/>
+            <property name="env.COMPIZ_BIN_PATH" value="/usr/bin/"/>
             <property name="env.COMPIZ_CONFIG_PROFILE" value="ubuntu"/>
-            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-exfHjwmvnE"/>
+            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-3r5kYhkPDb"/>
             <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/ubuntu.default.path"/>
             <property name="env.DESKTOP_SESSION" value="ubuntu"/>
             <property name="env.DISPLAY" value=":0"/>
@@ -21,9 +22,9 @@
             <property name="env.GTK_MODULES" value="gail:atk-bridge:unity-gtk-module"/>
             <property name="env.HOME" value="/home/leigh"/>
             <property name="env.IM_CONFIG_PHASE" value="1"/>
-            <property name="env.INSTANCE" value="Unity"/>
+            <property name="env.INSTANCE" value=""/>
             <property name="env.JAVA_HOME" value="/usr/lib/jvm/java-8-openjdk-amd64"/>
-            <property name="env.JOB" value="gnome-session"/>
+            <property name="env.JOB" value="unity-settings-daemon"/>
             <property name="env.LANG" value="en_US.UTF-8"/>
             <property name="env.LANGUAGE" value="en_US"/>
             <property name="env.LC_ADDRESS" value="sv_SE.UTF-8"/>
@@ -56,23 +57,28 @@
             <property name="env.QT_IM_MODULE" value="ibus"/>
             <property name="env.QT_LINUX_ACCESSIBILITY_ALWAYS_ON" value="1"/>
             <property name="env.QT_QPA_PLATFORMTHEME" value="appmenu-qt5"/>
+            <property name="env.SESSION" value="ubuntu"/>
             <property name="env.SESSIONTYPE" value="gnome-session"/>
+            <property name="env.SESSION_MANAGER" value="local/sleigher:@/tmp/.ICE-unix/2504,unix/sleigher:/tmp/.ICE-unix/2504"/>
             <property name="env.SHELL" value="/bin/zsh"/>
             <property name="env.SHLVL" value="1"/>
             <property name="env.SSH_AUTH_SOCK" value="/run/user/1000/keyring/ssh"/>
             <property name="env.TERM" value="xterm-256color"/>
-            <property name="env.UPSTART_EVENTS" value="started starting"/>
+            <property name="env.UNITY_DEFAULT_PROFILE" value="unity"/>
+            <property name="env.UNITY_HAS_3D_SUPPORT" value="true"/>
+            <property name="env.UPSTART_EVENTS" value="xsession started"/>
             <property name="env.UPSTART_INSTANCE" value=""/>
-            <property name="env.UPSTART_JOB" value="unity-settings-daemon"/>
-            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1758"/>
+            <property name="env.UPSTART_JOB" value="unity7"/>
+            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1797"/>
             <property name="env.USER" value="leigh"/>
             <property name="env.VTE_VERSION" value="4205"/>
-            <property name="env.WINDOWID" value="56623114"/>
+            <property name="env.WINDOWID" value="85983242"/>
             <property name="env.XAUTHORITY" value="/home/leigh/.Xauthority"/>
             <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg"/>
             <property name="env.XDG_CURRENT_DESKTOP" value="Unity"/>
             <property name="env.XDG_DATA_DIRS" value="/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop"/>
             <property name="env.XDG_GREETER_DATA_DIR" value="/var/lib/lightdm-data/leigh"/>
+            <property name="env.XDG_MENU_PREFIX" value="gnome-"/>
             <property name="env.XDG_RUNTIME_DIR" value="/run/user/1000"/>
             <property name="env.XDG_SEAT" value="seat0"/>
             <property name="env.XDG_SEAT_PATH" value="/org/freedesktop/DisplayManager/Seat0"/>
@@ -140,6 +146,58 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="33.628" classname="net.sf.latexdraw.testautomation.AlfaModel"/>
+        <testcase name="AlfaModel" time="5.483" classname="net.sf.latexdraw.testautomation.AlfaModel">
+            <error type="java.lang.AssertionError">
+                java.lang.AssertionError
+                	at org.junit.Assert.fail(Assert.java:86)
+                	at org.junit.Assert.assertTrue(Assert.java:41)
+                	at org.junit.Assert.assertTrue(Assert.java:52)
+                	at net.sf.latexdraw.testautomation.AlfaModel.e_DrawCircle(AlfaModel.java:83)
+                	at jdk.nashorn.internal.scripts.Script$Recompilation$28$1178$\^eval\_.e_DrawCircle(&lt;eval&gt;:1)
+                	at jdk.nashorn.internal.scripts.Script$27$\^eval\_.:program(&lt;eval&gt;:1)
+                	at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:637)
+                	at jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:494)
+                	at jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:393)
+                	at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:449)
+                	at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:406)
+                	at jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:402)
+                	at jdk.nashorn.api.scripting.NashornScriptEngine.eval(NashornScriptEngine.java:155)
+                	at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:264)
+                	at org.graphwalker.core.machine.ExecutionContext.execute(ExecutionContext.java:300)
+                	at org.graphwalker.core.machine.SimpleMachine.execute(SimpleMachine.java:278)
+                	at org.graphwalker.core.machine.SimpleMachine.execute(SimpleMachine.java:267)
+                	at org.graphwalker.core.machine.SimpleMachine.getNextStep(SimpleMachine.java:105)
+                	at org.graphwalker.java.test.TestExecutor.execute(TestExecutor.java:199)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                	at java.lang.reflect.Method.invoke(Method.java:498)
+                	at org.graphwalker.java.test.Reflections.invoke(Reflections.java:74)
+                	at org.graphwalker.java.test.Reflector.execute(Reflector.java:125)
+                	at org.graphwalker.maven.plugin.TestMojo.execute(TestMojo.java:153)
+                	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+                	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+                	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+                	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+                	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+                	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+                	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+                	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+                	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+                	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+                	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+                	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                	at java.lang.reflect.Method.invoke(Method.java:498)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+                	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</error>
+        </testcase>
     </testsuite>
 </testsuites>

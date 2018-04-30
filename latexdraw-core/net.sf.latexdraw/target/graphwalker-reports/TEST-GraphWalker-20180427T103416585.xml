@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<testsuites time="113.226" tests="1" failures="0" errors="1">
-    <testsuite tests="1" failures="0" errors="1" time="113.226" timestamp="2018-04-26T10:42:03">
+<testsuites time="5.654" tests="1" failures="0" errors="1">
+    <testsuite tests="1" failures="0" errors="1" time="5.654" timestamp="2018-04-27T10:34:16">
         <properties>
             <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
             <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
             <property name="env.CLUTTER_IM_MODULE" value="xim"/>
+            <property name="env.COMPIZ_BIN_PATH" value="/usr/bin/"/>
             <property name="env.COMPIZ_CONFIG_PROFILE" value="ubuntu"/>
-            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-Elv6SyLlK4"/>
+            <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-3r5kYhkPDb"/>
             <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/ubuntu.default.path"/>
-            <property name="env.DESKTOP_AUTOSTART_ID" value="10ad502a846fb207b0152472276923544500000024400002"/>
             <property name="env.DESKTOP_SESSION" value="ubuntu"/>
             <property name="env.DISPLAY" value=":0"/>
             <property name="env.GDMSESSION" value="ubuntu"/>
@@ -24,7 +24,7 @@
             <property name="env.IM_CONFIG_PHASE" value="1"/>
             <property name="env.INSTANCE" value=""/>
             <property name="env.JAVA_HOME" value="/usr/lib/jvm/java-8-openjdk-amd64"/>
-            <property name="env.JOB" value="dbus"/>
+            <property name="env.JOB" value="unity-settings-daemon"/>
             <property name="env.LANG" value="en_US.UTF-8"/>
             <property name="env.LANGUAGE" value="en_US"/>
             <property name="env.LC_ADDRESS" value="sv_SE.UTF-8"/>
@@ -59,15 +59,20 @@
             <property name="env.QT_QPA_PLATFORMTHEME" value="appmenu-qt5"/>
             <property name="env.SESSION" value="ubuntu"/>
             <property name="env.SESSIONTYPE" value="gnome-session"/>
-            <property name="env.SESSION_MANAGER" value="local/sleigher:@/tmp/.ICE-unix/2440,unix/sleigher:/tmp/.ICE-unix/2440"/>
+            <property name="env.SESSION_MANAGER" value="local/sleigher:@/tmp/.ICE-unix/2504,unix/sleigher:/tmp/.ICE-unix/2504"/>
             <property name="env.SHELL" value="/bin/zsh"/>
             <property name="env.SHLVL" value="1"/>
             <property name="env.SSH_AUTH_SOCK" value="/run/user/1000/keyring/ssh"/>
             <property name="env.TERM" value="xterm-256color"/>
-            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1756"/>
+            <property name="env.UNITY_DEFAULT_PROFILE" value="unity"/>
+            <property name="env.UNITY_HAS_3D_SUPPORT" value="true"/>
+            <property name="env.UPSTART_EVENTS" value="xsession started"/>
+            <property name="env.UPSTART_INSTANCE" value=""/>
+            <property name="env.UPSTART_JOB" value="unity7"/>
+            <property name="env.UPSTART_SESSION" value="unix:abstract=/com/ubuntu/upstart-session/1000/1797"/>
             <property name="env.USER" value="leigh"/>
             <property name="env.VTE_VERSION" value="4205"/>
-            <property name="env.WINDOWID" value="35651594"/>
+            <property name="env.WINDOWID" value="85983242"/>
             <property name="env.XAUTHORITY" value="/home/leigh/.Xauthority"/>
             <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg"/>
             <property name="env.XDG_CURRENT_DESKTOP" value="Unity"/>
@@ -141,14 +146,14 @@
             <property name="user.name" value="leigh"/>
             <property name="user.timezone" value=""/>
         </properties>
-        <testcase name="AlfaModel" time="113.226" classname="net.sf.latexdraw.testautomation.AlfaModel">
+        <testcase name="AlfaModel" time="5.654" classname="net.sf.latexdraw.testautomation.AlfaModel">
             <error type="java.lang.AssertionError">
                 java.lang.AssertionError
                 	at org.junit.Assert.fail(Assert.java:86)
                 	at org.junit.Assert.assertTrue(Assert.java:41)
                 	at org.junit.Assert.assertTrue(Assert.java:52)
-                	at net.sf.latexdraw.testautomation.AlfaModel.e_DrawCircle(AlfaModel.java:80)
-                	at jdk.nashorn.internal.scripts.Script$Recompilation$34$1139$\^eval\_.e_DrawCircle(&lt;eval&gt;:1)
+                	at net.sf.latexdraw.testautomation.AlfaModel.e_DrawCircle(AlfaModel.java:83)
+                	at jdk.nashorn.internal.scripts.Script$Recompilation$34$756$\^eval\_.e_DrawCircle(&lt;eval&gt;:1)
                 	at jdk.nashorn.internal.scripts.Script$33$\^eval\_.:program(&lt;eval&gt;:1)
                 	at jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:637)
                 	at jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:494)
