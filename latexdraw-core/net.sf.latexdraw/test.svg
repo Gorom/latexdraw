@@ -1,8 +1,14 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 3 140 140"
     xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw"
     version="1.1" baseProfile="full">
-    <g/>
+    <g>
+        <g latexdraw:type="square" id="id1402644028">
+            <rect x="25.999999999999886" y="24.0" width="98.0"
+                height="98.0" latexdraw:borderPos="outer" stroke="black"
+                stroke-width="2.0" fill="none"/>
+        </g>
+    </g>
     <defs/>
     <metadata>
         <latexdraw:metadata>

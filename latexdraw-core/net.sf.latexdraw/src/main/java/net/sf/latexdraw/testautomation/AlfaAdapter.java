@@ -26,33 +26,35 @@ public class AlfaAdapter {
 		saveFile.delete();
 	}
 
-	public boolean foundCircleTool() {
-		return checkMatch("LaTeXDraw_CircleTool.png", 20);
+	public boolean foundSquareTool() {
+		return checkMatch("SquareTool.png", 5);
 	}
 
-	public void selectCircleTool() {
+	public void selectSquareTool() {
 		try {
-			screen.click(sikuliImageDirr + "LaTeXDraw_CircleTool.png");
+			screen.click(sikuliImageDirr + "SquareTool.png");
 		} catch (FindFailed findFailed) {
 			System.out.println("Something went terribly wrong!");
 		}
 	}
 
-	public boolean foundCircle() {
-		return checkMatch("LaTeXDraw_Circle.png", 20);
+	public boolean foundSquare() {
+		return checkMatch("Square.png", 5);
 	}
 
-	public void drawSelectedShape() {
-		clickImageAndDrag("LaTeXDraw_UpperLeftDrawingArea.png", 0, 0, 50, 50);
+	public void drawSquare() {
+		if (!foundSquare()) {
+			clickImageAndDrag("LaTeXDraw_UpperLeftDrawingArea.png", 0, 0, 50, 50);
+		}
 	}
 
 	public boolean foundSplash() {
-		return checkMatch("LatexDraw_Splash.png", 20);
+		return checkMatch("LatexDraw_Splash.png", 5);
 	}
 
 	public boolean foundToolbar() {
 
-		return checkMatch("LatexDraw_Toolbar.png", 20);
+		return checkMatch("LatexDraw_Toolbar.png", 5);
 	}
 
 	private boolean checkMatch(String path, double timeout) {
@@ -61,24 +63,16 @@ public class AlfaAdapter {
 		return result;
 	}
 
-	public boolean foundSelectionTool() {
-		return checkMatch("LaTeXDraw_SelectTool.png", 20);
-	}
-
 	public void selectSelectionTool() {
-		try {
-			screen.click(sikuliImageDirr + "LaTeXDraw_SelectTool.png");
-		} catch (FindFailed findFailed) {
-			System.out.println("Could not find selection tool.");
-		}
+		clickImage("LaTeXDraw_SelectTool.png", 0, 0);
 	}
 
-	public boolean selectCircle() {
-		return clickImageAndDrag("LaTeXDraw_Circle.png", 0, 0, 50, 50);
+	public boolean selectSquare() {
+		return clickImageAndDrag("Square.png", 0, 0, 100, 100);
 	}
 
-	public boolean circleSelected() {
-		return checkMatch("LaTeXDraw_SelectedCircle.png", 20);
+	public boolean foundSelectedSquare() {
+		return checkMatch("SelectedSquare.png", 5);
 	}
 
 	public void save() {
@@ -89,8 +83,8 @@ public class AlfaAdapter {
 		}
 	}
 
-	public void moveCircle() {
-		clickImageAndDrag("LaTeXDraw_SelectedCircle.png", 49, 25, 200, 200);
+	public void moveSquare() {
+		clickImageAndDrag("SelectedSquare.png", 49, 25, 200, 200);
 	}
 
 	public void viewPST() {
@@ -151,9 +145,77 @@ public class AlfaAdapter {
 
 	public void delete() {
 		screen.type(Key.DELETE);
+		screen.wait(4d);
 	}
 
 	public void deselect() {
 		clickImage("LatexDraw_DrawingEdge.png", 0, 0);
+		screen.wait(2d);
+	}
+
+	public void rotateSquare() {
+		clickImageAndDrag("LatexDraw_Rotate.png", 0, 0, 0, 50);
+		screen.mouseMove(100, 100);
+	}
+
+	public void undo() {
+		clickImage("LatexDraw_undo.png", 0, 0);
+		screen.wait(2d);
+	}
+
+	public boolean foundRotatedSquare() {
+		return checkMatch("LatexDraw_RotatedSquare.png", 5);
+	}
+
+	public void scaleSquare() {
+		clickImageAndDrag("ScalingArrow.png", 0, 0, 50, 50);
+	}
+
+	public void rescaleSquare() {
+		clickImageAndDrag("ScalingArrow.png", 0, 0, -50, -50);
+	}
+
+	public boolean foundScaledSquare() {
+		return checkMatch("ScaledSquare.png", 5);
+	}
+
+	public boolean foundDrawingToolbar() {
+		return checkMatch("LaTeXDraw_Drawing_Toolbar.png", 5);
+	}
+
+	public boolean foundPSTToolbar() {
+		return checkMatch("LaTeXDraw_PST_Toolbar.png", 5);
+	}
+
+	public void runWindowed() {
+		screen.type(Key.ESC);
+		screen.wait(1d);
+		clickImage("FullScreen.png", 0, 0);
+		screen.wait(2d);
+	}
+
+	public boolean foundRotateSymbol() {
+		return checkMatch("LaTeXDraw_Rotate.png", 3);
+	}
+
+	public boolean foundScaleSymbol() {
+		return checkMatch("ScaledSquare.png", 3);
+	}
+
+	public void exit() {
+		screen.keyDown(Key.ALT);
+		screen.keyDown(Key.F4);
+		screen.keyUp();
+		screen.wait(3d);
+	}
+
+	public void pressEscape() {
+		screen.keyDown(Key.ESC);
+		screen.keyUp();
+		screen.wait(3d);
+	}
+
+	public boolean foundExitPrompt() {
+		return checkMatch("SavePrompt.png", 5);
 	}
 }

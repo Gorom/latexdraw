@@ -1,7 +1,7 @@
 package net.sf.latexdraw.testautomation;
 
-import org.graphwalker.core.condition.Length;
-import org.graphwalker.core.generator.QuickRandomPath;
+import org.graphwalker.core.condition.VertexCoverage;
+import org.graphwalker.core.generator.RandomPath;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.AfterExecution;
 import org.graphwalker.java.annotation.BeforeExecution;
@@ -9,9 +9,10 @@ import org.graphwalker.java.annotation.GraphWalker;
 import org.graphwalker.java.test.TestBuilder;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-@GraphWalker(value = "random(edge_coverage(100))", start = "e_ProgramStart")
+@GraphWalker(value = "random(vertex_coverage(100))", start = "e_ProgramStart")
 public class AlfaModel extends ExecutionContext implements Beta {
 
 	private final AlfaAdapter adapter = new AlfaAdapter();
@@ -38,49 +39,56 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	public void e_DeselectShapes() {
 		System.out.println("e_DeselectShapes");
 		adapter.deselect();
+		assertFalse(adapter.foundScaleSymbol());
+		assertFalse(adapter.foundRotateSymbol());
 	}
 
 	@Override
 	public void e_DeleteSelectedShapes() {
 		System.out.println("e_DeleteSelectedShapes");
 		adapter.delete();
+		assertFalse(adapter.foundSquare());
 	}
 
 	@Override
 	public void e_Scale() {
 		System.out.println("e_Scale");
-
+		adapter.scaleSquare();
+		assertTrue(adapter.foundScaledSquare());
+		adapter.rescaleSquare();
 	}
 
 	@Override
 	public void e_ViewDrawing() {
 		System.out.println("e_ViewDrawing");
 		adapter.viewDrawing();
-	}
-
-	@Override
-	public void e_CloseAppDoNotSave() {
-		System.out.println("e_CloseAppDoNotSave");
+		assertTrue(adapter.foundDrawingToolbar());
 	}
 
 	@Override
 	public void e_ViewPST() {
 		System.out.println("e_ViewPST");
 		adapter.viewPST();
-
+		assertTrue(adapter.foundPSTToolbar());
 	}
 
 	@Override
-	public void e_DrawCircle() {
-		assertTrue(adapter.foundCircleTool());
-		adapter.selectCircleTool();
-		adapter.drawSelectedShape();
-		assertTrue(adapter.foundCircle());
+	public void e_DrawSquare() {
+		System.out.println("e_DrawSquare");
+		assertTrue(adapter.foundSquareTool());
+		adapter.selectSquareTool();
+		if (adapter.foundSquare()) {
+			setAttribute("saved", true);
+		}
+		adapter.drawSquare();
+		assertTrue(adapter.foundSquare());
 	}
 
 	@Override
 	public void e_CloseApp() {
 		System.out.println("e_CloseApp");
+		adapter.exit();
+		assertTrue(adapter.foundExitPrompt());
 	}
 
 	@Override
@@ -91,19 +99,16 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	@Override
 	public void e_CancelPrompt() {
 		System.out.println("e_CancelPrompt");
+		adapter.pressEscape();
+		assertFalse(adapter.foundExitPrompt());
 	}
 
 	@Override
 	public void e_SelectShape() {
 		System.out.println("e_SelectShape");
-		if (adapter.foundSelectionTool()) {
-			System.out.println("Found selection tool!");
-		} else {
-			System.out.println("Could not find selection tool.");
-		}
 		adapter.selectSelectionTool();
-		if (adapter.selectCircle()) {
-			assertTrue(adapter.circleSelected());
+		if (adapter.selectSquare()) {
+			assertTrue(adapter.foundSelectedSquare());
 		}
 	}
 
@@ -124,20 +129,20 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	}
 
 	@Override
-	public void e_SelectAdditionalShape() {
-		System.out.println("e_SelectAdditionalShape");
-	}
-
-	@Override
 	public void e_Rotate() {
 		System.out.println("e_Rotate");
+		adapter.rotateSquare();
+		assertTrue(adapter.foundRotatedSquare());
+		adapter.undo();
+		adapter.selectSelectionTool();
+		adapter.selectSquare();
 	}
 
 	@Override
 	public void e_Move() {
 		System.out.println("e_Move");
-		adapter.moveCircle();
-
+		adapter.moveSquare();
+		adapter.undo();
 	}
 
 	@Override
@@ -154,36 +159,19 @@ public class AlfaModel extends ExecutionContext implements Beta {
 	}
 
 	@Override
-	public void Exit() {
-
-	}
-
-	@Override
 	public void e_Success() {
 		System.out.println("e_Success");
 		assertTrue(adapter.foundToolbar());
-	}
-
-	@Override
-	public void e_Failure() {
-		System.out.println("e_Failure");
-
-	}
-
-	@Override
-	public void e_Restart() {
-		System.out.println("e_Restart");
-
+		adapter.runWindowed();
 	}
 
 	@Test
-	public void testTest() {
+	public void graphwalkerTest() {
 		new TestBuilder()
 				.setModel(MODEL_PATH)
 				.setContext(new AlfaModel())
-				.setPathGenerator(new QuickRandomPath(new Length(20)))
+				.setPathGenerator(new RandomPath(new VertexCoverage(100)))
 				.setStart("e_ProgramStart")
 				.execute();
 	}
-
 }

@@ -572,6 +572,7 @@ net/sf/latexdraw/parsers/pst/PSTParser$ParamlinewidthContext.class
 net/sf/latexdraw/instruments/CodeInserter.class
 net/sf/latexdraw/parsers/pst/PSTBaseListener.class
 net/sf/latexdraw/view/latex/VerticalPosition$5.class
+net/sf/latexdraw/testautomation/Beta_new.class
 net/sf/latexdraw/badaboom/BadaboomHandler.class
 net/sf/latexdraw/parsers/pst/PSTParser$CurvetoContext.class
 net/sf/latexdraw/parsers/pst/PSTParser$ParamcurvatureContext.class
@@ -641,6 +642,7 @@ net/sf/latexdraw/view/latex/VerticalPosition$1.class
 net/sf/latexdraw/models/impl/LGroup.class
 net/sf/latexdraw/commands/shape/JoinShapes.class
 net/sf/latexdraw/parsers/svg/parsers/SVGLengthParser$FontSize$1.class
+net/sf/latexdraw/testautomation/Beta_old3.class
 net/sf/latexdraw/parsers/pst/PSTParser$ParamxunitContext.class
 net/sf/latexdraw/models/interfaces/shape/IClosable.class
 net/sf/latexdraw/instruments/FacadeCanvasController.class

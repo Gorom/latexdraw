@@ -5,8 +5,8 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 import org.graphwalker.java.annotation.Edge;
 
-@Model(file = "net/sf/latexdraw/testautomation/Beta.graphml")
-public interface Beta {
+@Model(file = "net/sf/latexdraw/testautomation/Beta_old3.graphml")
+public interface Beta_old3 {
 
     @Vertex()
     void Drawing();
@@ -24,6 +24,12 @@ public interface Beta {
     void e_ViewDrawing();
 
     @Edge()
+    void e_CloseAppDoNotSave();
+
+    @Edge()
+    void e_Restart();
+
+    @Edge()
     void e_ViewPST();
 
     @Edge()
@@ -36,13 +42,25 @@ public interface Beta {
     void PST();
 
     @Edge()
+    void e_SelectAdditionalShape();
+
+    @Edge()
     void e_Rotate();
 
     @Edge()
     void e_Move();
 
+    @Edge()
+    void e_Success();
+
+    @Edge()
+    void e_Failure();
+
     @Vertex()
     void ShapesSelected();
+
+    @Edge()
+    void e_DrawCircle();
 
     @Edge()
     void e_CloseApp();
@@ -59,9 +77,6 @@ public interface Beta {
     @Edge()
     void e_ProgramStart();
 
-    @Edge()
-    void e_Success();
-
-    @Edge()
-    void e_DrawSquare();
+    @Vertex()
+    void Exit();
 }
