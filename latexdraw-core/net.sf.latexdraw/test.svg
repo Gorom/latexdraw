@@ -3,9 +3,10 @@
     xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw"
     version="1.1" baseProfile="full">
     <g>
-        <g latexdraw:type="square" id="id1402644028">
-            <rect x="25.999999999999886" y="24.0" width="98.0"
-                height="98.0" latexdraw:borderPos="outer" stroke="black"
+        <g latexdraw:type="square" id="id977094663">
+            <rect x="25.999999999999886" y="24.000000000000057"
+                width="98.00000000000006" height="98.00000000000006"
+                latexdraw:borderPos="outer" stroke="black"
                 stroke-width="2.0" fill="none"/>
         </g>
     </g>

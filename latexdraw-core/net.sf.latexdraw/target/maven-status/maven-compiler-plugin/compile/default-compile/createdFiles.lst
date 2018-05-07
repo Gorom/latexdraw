@@ -649,6 +649,7 @@ net/sf/latexdraw/instruments/FacadeCanvasController.class
 net/sf/latexdraw/instruments/ShapeStdGridCustomiser.class
 net/sf/latexdraw/view/jfx/ViewEllipseBased.class
 net/sf/latexdraw/view/svg/SVGGrid.class
+net/sf/latexdraw/commands/CheckConvertExists.class
 net/sf/latexdraw/models/impl/LModifiablePointsShape.class
 net/sf/latexdraw/view/jfx/ViewShape.class
 net/sf/latexdraw/parsers/pst/PSTParser$PsccurveContext.class

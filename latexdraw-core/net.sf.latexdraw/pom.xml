@@ -217,6 +217,11 @@
     </build>
 
     <dependencies>
+	<dependency>
+	    <groupId>org.quicktheories</groupId>
+	    <artifactId>quicktheories</artifactId>
+	    <version>0.25</version>
+	</dependency>
         <dependency>
             <groupId>org.graphwalker</groupId>
             <artifactId>graphwalker-core</artifactId>
