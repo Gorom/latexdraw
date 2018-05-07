@@ -72,8 +72,7 @@ public abstract class ShapePropertyCustomiser extends JfxInstrument {
 	public void update() {
 		if(pencil.isActivated()) {
 			update(ShapeFactory.INST.createGroup(pencil.createShapeInstance()));
-		}
-		else {
+		}else {
 			update(drawing.getSelection());
 		}
 	}
@@ -113,11 +112,11 @@ public abstract class ShapePropertyCustomiser extends JfxInstrument {
 
 	protected void addSpinnerPropBinding(final Spinner<?> spinner, final ShapeProperties prop, final boolean angle) {
 		spinnerBinder(ModifyShapeProperty.class).on(spinner).map(i -> mapModShProp(null, prop)).
-			then((c, i) -> c.setValue(angle ? Math.toRadians(((Number) i.getWidget().getValue()).doubleValue()) : i.getWidget().getValue())).
+			then((i, c) -> c.setValue(angle ? Math.toRadians(((Number) i.getWidget().getValue()).doubleValue()) : i.getWidget().getValue())).
 			when(handActiv).bind();
 
 		spinnerBinder(ModifyPencilParameter.class).on(spinner).map(i -> firstPropPen(null, prop)).
-			then((c, i) -> c.setValue(angle ? Math.toRadians(((Number) i.getWidget().getValue()).doubleValue()) : i.getWidget().getValue())).
+			then((i, c) -> c.setValue(angle ? Math.toRadians(((Number) i.getWidget().getValue()).doubleValue()) : i.getWidget().getValue())).
 			when(pencilActiv).bind();
 	}
 
@@ -144,8 +143,7 @@ public abstract class ShapePropertyCustomiser extends JfxInstrument {
 		toggleButtonBinder(ModifyPencilParameter.class).on(button).map(i -> firstPropPen(value, prop)).when(pencilActiv).bind();
 	}
 
-	protected void addSpinnerXYPropBinding(final Spinner<Double> spinnerX, final Spinner<Double> spinnerY, final ShapeProperties property)
-		{
+	protected void addSpinnerXYPropBinding(final Spinner<Double> spinnerX, final Spinner<Double> spinnerY, final ShapeProperties property) {
 		spinnerBinder(ModifyShapeProperty.class).on(spinnerX, spinnerY).
 			map(i -> new ModifyShapeProperty(property, canvas.getDrawing().getSelection().duplicateDeep(false), null)).
 			then(c -> c.setValue(ShapeFactory.INST.createPoint(spinnerX.getValue(), spinnerY.getValue()))).when(handActiv).bind();

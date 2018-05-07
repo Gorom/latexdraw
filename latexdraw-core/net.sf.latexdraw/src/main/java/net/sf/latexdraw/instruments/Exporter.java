@@ -115,7 +115,9 @@ public class Exporter extends JfxInstrument implements Initializable {
 	public void save(final boolean generalPreferences, final String nsURI, final Document document, final Element root) {
 		super.save(generalPreferences, nsURI, document, root);
 
-		if(document == null || root == null) return;
+		if(document == null || root == null) {
+			return;
+		}
 
 		if(generalPreferences) {
 			Element elt = document.createElement(LNamespace.XML_PATH_EXPORT);
@@ -148,7 +150,7 @@ public class Exporter extends JfxInstrument implements Initializable {
 	@Override
 	protected void configureBindings() {
 		menuItemBinder(Export.class).on(menuItemBMP, menuItemEPSLatex, menuItemJPG, menuItemPDF, menuItemPDFcrop, menuItemPNG, menuItemPST).
-			first((c, i) -> {
+			first((i, c) -> {
 			if(i.getWidget().getUserData() instanceof ExportFormat) {
 				final ExportFormat format = (ExportFormat) i.getWidget().getUserData();
 				c.setDialogueBox(getExportDialog(format));

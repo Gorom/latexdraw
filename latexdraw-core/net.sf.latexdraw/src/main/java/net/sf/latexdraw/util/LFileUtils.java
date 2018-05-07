@@ -18,14 +18,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
-import java.net.URI;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Optional;
 import java.util.Random;
@@ -33,8 +29,7 @@ import java.util.stream.Stream;
 import net.sf.latexdraw.badaboom.BadaboomCollector;
 
 /**
- * Defines some workarounds to deal with the problem of the renameto function.
- * The renameto function cannot rename a file from one filesystem to one other.
+ * Routines related to files manipulation.
  * @author Arnaud BLOUIN
  */
 public final class LFileUtils {
@@ -46,36 +41,39 @@ public final class LFileUtils {
 		super();
 	}
 
-	public FileSystem initFileSystem(final URI uri) throws IOException {
-		try {
-			return FileSystems.newFileSystem(uri, Collections.emptyMap());
-		}catch(final IllegalArgumentException ignore) {
-			return FileSystems.getDefault();
-		}
+	public String getFileWithoutExtension(final String file) {
+		return file == null ? "" : file.substring(0, file.lastIndexOf('.'));
 	}
-	
+
 	/**
 	 * Replaces ~ characters by \string~.
 	 * @param str The string to process.
 	 * @return The normalised string. Can be null.
 	 */
 	public String normalizeForLaTeX(final String str) {
-		if(str==null) return null;
-		if(LSystem.INSTANCE.isWindows())
+		if(str == null) {
+			return null;
+		}
+		if(LSystem.INSTANCE.isWindows()) {
 			return str.replaceAll("\\\\", "/").replaceAll("~", "\\\\string~"); //NON-NLS
+		}
 		return str.replaceAll("~", "\\\\string~"); //NON-NLS
 	}
 
-	
+
 	/**
 	 * Removes the given dir with its content.
 	 * @param dir The directory to remove.
 	 */
 	public void removeDirWithContent(final String dir) {
-		if(dir == null) return;
+		if(dir == null) {
+			return;
+		}
 
 		final Path path = Paths.get(dir);
-		if(!path.toFile().isDirectory()) return;
+		if(!path.toFile().isDirectory()) {
+			return;
+		}
 
 		try(final Stream<Path> paths = Files.walk(path)) {
 			paths.sorted(Comparator.reverseOrder()).forEach(file -> removeFilePath(file));
@@ -89,14 +87,15 @@ public final class LFileUtils {
 	 * @param path The path of the file to remove. Nothing is done if null.
 	 */
 	public void removeFilePath(final Path path) {
-		if(path == null) return;
+		if(path == null) {
+			return;
+		}
 
 		try {
 			Files.delete(path);
 		}catch(final NoSuchFileException fnEx) {
 			// Ignoring the exception.
-		}
-		catch(final IOException | SecurityException ex) {
+		}catch(final IOException | SecurityException ex) {
 			BadaboomCollector.INSTANCE.add(ex);
 		}
 	}
@@ -116,7 +115,7 @@ public final class LFileUtils {
 		}
 		return ok ? Optional.of(new File(path)) : Optional.empty();
 	}
-	
+
 
 	/**
 	 * Reads the given file and returns its text.
@@ -125,16 +124,15 @@ public final class LFileUtils {
 	 */
 	public String readTextFile(final String path) {
 		final StringBuilder txt = new StringBuilder();
-		
-		try(final InputStream is = getClass().getResourceAsStream(path);
-		final Reader reader = new InputStreamReader(is, "UTF-8");//$NON-NLS-1$
-		final BufferedReader br = new BufferedReader(reader)){
-	        String line = br.readLine();
 
-	        while(line != null) {
-	        	txt.append(line).append(LSystem.EOL);
-	            line = br.readLine();
-	        }
+		try(final InputStream is = getClass().getResourceAsStream(path); final Reader reader = new InputStreamReader(is, "UTF-8"); //NON-NLS
+			final BufferedReader br = new BufferedReader(reader)) {
+			String line = br.readLine();
+
+			while(line != null) {
+				txt.append(line).append(LSystem.EOL);
+				line = br.readLine();
+			}
 		}catch(final IOException ex) {
 			BadaboomCollector.INSTANCE.add(ex);
 		}
@@ -148,9 +146,10 @@ public final class LFileUtils {
 	 * @return The created folder or null (if the folder cannot be created or the rights cannot be restricted to the current user).
 	 */
 	public Optional<File> createTempDir() {
-		final String pathTmp = System.getProperty("java.io.tmpdir"); //$NON-NLS-1$
-		final String path = pathTmp + (pathTmp.endsWith(LSystem.FILE_SEP) ? "" : LSystem.FILE_SEP) + "latexdraw" + LSystem.FILE_SEP + //$NON-NLS-1$ //$NON-NLS-2$
-			"latexdrawTmp" + System.currentTimeMillis() + new Random().nextInt(100000); //$NON-NLS-1$
+		final String pathTmp = System.getProperty("java.io.tmpdir");
+		final String path = pathTmp + (pathTmp.endsWith(LSystem.FILE_SEP) ? "" : LSystem.FILE_SEP) + "latexdraw" + LSystem.FILE_SEP + "latexdrawTmp" +
+			//NON-NLS
+			System.currentTimeMillis() + new Random().nextInt(100000);
 		final File tmpDir = new File(path);
 
 		try {
