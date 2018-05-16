@@ -4,7 +4,10 @@ import net.sf.latexdraw.models.MathUtils;
 import net.sf.latexdraw.models.impl.LShapeFactory;
 import net.sf.latexdraw.models.interfaces.shape.ICircle;
 import net.sf.latexdraw.models.interfaces.shape.IShapeFactory;
+import net.sf.latexdraw.models.interfaces.shape.Position;
 import org.junit.Test;
+
+import java.awt.*;
 
 import static org.quicktheories.QuickTheory.qt;
 import static org.quicktheories.generators.SourceDSL.doubles;
@@ -109,6 +112,32 @@ public class PropertyTests {
 				(x, y, w) ->
 						rotateTwoTimesOneEightyCircleIsSame(factory.createCircle(factory.createPoint(x, y), w))
 		);
+	}
+
+	@Test
+	public void scaleAndRescaleResultsInOriginalShape() {
+		qt().forAll(
+				doubles().between(SMALLEST_POSITIVE_NONZERO_DOUBLE, LARGEST_NONMAX_DOUBLE),
+				doubles().between(SMALLEST_POSITIVE_NONZERO_DOUBLE, LARGEST_NONMAX_DOUBLE),
+				doubles().between(SMALLEST_POSITIVE_NONZERO_DOUBLE, LARGEST_NONMAX_DOUBLE)).check(
+				(x, y, w) ->
+						scaleAndRescaleIsSame(x, y, w)
+		);
+	}
+
+	private boolean scaleAndRescaleIsSame(double x, double y, double w) {
+		IShapeFactory factory = new LShapeFactory();
+		x *= 2;
+		y *= 2;
+		w *= 2;
+		ICircle circle = factory.createCircle(factory.createPoint(x, y), w);
+		ICircle clone = cloneCircle(circle);
+		clone.scaleWithRatio(clone.getWidth(), clone.getHeight(), Position.NORTH, new Rectangle.Double(0, 0, clone.getWidth() / 2, clone.getHeight() / 2));
+		clone.scaleWithRatio(clone.getWidth(), clone.getHeight(), Position.NORTH, new Rectangle.Double(0, 0, clone.getWidth() * 2, clone.getHeight() * 2));
+		//clone.scale();
+		//clone.rotate(factory.createPoint(0, 0), angle);
+		//clone.rotate(factory.createPoint(0, 0), -angle);
+		return doubleEquals(circle.getRadius(), clone.getRadius(), 0.001);
 	}
 
 	private boolean rotateTwoTimesOneEightyCircleIsSame(ICircle circle) {
