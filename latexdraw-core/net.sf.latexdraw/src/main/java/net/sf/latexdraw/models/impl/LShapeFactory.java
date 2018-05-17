@@ -297,7 +297,7 @@ public class LShapeFactory implements IShapeFactory {
 
 	@Override
 	public ICircle createCircle(final IPoint pt, final double radius) {
-		return new LCircle(pt, radius);
+		return new LCircle(pt, radius); // width = radius * 2
 	}
 
 	@Override

@@ -45,7 +45,7 @@ public final class MathUtils {
 	 * @return Empty if the string is not a double. The value otherwise.
 	 */
 	public Optional<Double> parserDouble(final String str) {
-		if(str == null) {
+		if(str == null) { // Can make !=
 			return Optional.empty();
 		}
 		try {

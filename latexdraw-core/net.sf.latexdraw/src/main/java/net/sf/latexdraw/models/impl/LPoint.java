@@ -135,7 +135,7 @@ class LPoint implements IPoint {
 			return null;
 		}
 
-		return ShapeFactory.INST.createPoint(2d * x - getX(), getY());
+		return ShapeFactory.INST.createPoint(2d * x - getX(), getY()); // Multiply y with 2
 	}
 
 	@Override
